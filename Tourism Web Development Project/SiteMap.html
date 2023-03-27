@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+       <title>Tourism | Sitemap</title>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <meta name ="author"  content ="XYZtravels" >
+
+         <link rel="shortcut icon" href="images/logo/SLmap.png" />
+
+         <link rel="stylesheet" type="text/css" href="css/main.css">
+         <link rel="stylesheet" type="text/css" href="css/FontChangeButton.css">
+
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- icon CDN-->
+ 
+         <style>
+		    
+			body {
+			    background-image: url(Background3.jpg);
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+                background-size: 100% 100%;
+			}
+			
+            .classH1 {
+                width: 100%;
+                float: left;
+                /*font-style: oblique;*/
+                text-align: center;
+				margin: 50px 0 0 0 
+            }
+            h1 {
+                color: dimgray;
+                font-size: 45px;
+            }
+            h2 {
+                color: dimgray;
+                font-size: 35px;
+            }
+            .siteMap-list {
+                width: 100%;
+                float: left;
+                text-align: left;
+            }
+            a {
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navBar-primary">
+            <nav>
+                <div class="toggleBtn" onClick="showNavBar()" ><i class="material-icons">menu</i></div>
+
+                <div>
+                    <a href="Home.html"  >
+                        <img  class="navBtn-logo" src="Images/logo/sri-lanka-tourism-logo.png" >
+                    </a>
+                </div>
+
+                <ul class="navUl">
+                    <!--<li ><a href="Home.html"> <img src="Images/logo/Delux-logo.png " class="logo"></a></li>-->
+                    <li class="navBtn"><a href="Home.html">Home</a></li>
+                    <li class="navBtn"><a href="Gallery.html" >Gallery</a></li>
+                    <li class="navBtn"><a href="buyProducts.html">Buy Products</a></li>
+                    <li class="navBtn"><a href="sriLankanInsider.html">Sri Lankan Insider</a></li>
+					<li class="navBtn"><a href="StudentDetails.html">Student Details</a></li>
+					<li class="navBtn"><a href="Queryform01.html">Query Form</a></li>
+                </ul>
+
+                <div class=" more-option" onClick="showMoreOptions()"><a ><i class="material-icons">more_vert</i></a>
+                </div>
+                <div class="more-option-container" id="more_option_container">
+                    <div class="button " onclick="changeFont(this)" id="max">
+                        <span class="content">  A+</span>
+                    </div>
+                    <div class="button" onclick="changeFont(this)" id="min">
+                        <span class="content"> A-</span>
+                    </div>
+
+                    <div class="button" onclick="changeFont(this)" id="default">
+                        <span class="content">A</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class= "bodyContent">
+            <div class="classH1">
+                <h1>
+                    Site Map
+                </h1>
+            </div>
+            <div class="siteMap-list">
+                <a href="Home.html"><h2>Home</h2></a>
+                <a href="Gallery.html"><h2>Gallery</h2></a>
+                <a href="BuyProducts.html"><h2>Buy Products</h2></a>
+                <a href="sriLankanInsider.html"><h2>Sri Lankan Insider</h2></a>
+				<a href="StudentDetails.html"><h2>Student Details</h2></a>
+				<a href="Queryform01.html"><h2>Query Form</h2></a>
+            </div>
+        </div>
+
+        <div class="footer">
+
+            <a class="footer-container" href="sitemap.html">
+                Site Map
+            </a>
+
+            <div class="footer-container">
+                &copy; 2022 All Rights Reserved
+            </div>
+
+            <a class="footer-container" href="student_4.html">
+                Editor - Kanishka Jayashanka
+            </a>
+
+        </div>
+
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/FontChange.js"></script>
+    </body>
+</html>

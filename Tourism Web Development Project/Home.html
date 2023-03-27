@@ -1,0 +1,315 @@
+<html>
+	<head>
+		<title>  Sri Lanka Tourism </title>
+		
+
+		<link rel="shortcut icon" href="images/logo/SLmap.png" />
+
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/Home.css">
+		<link rel="stylesheet" type="text/css" href="css/studentDetailSection.css">
+		<link rel="stylesheet" type="text/css" href="css/FontChangeButton.css">
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- icon CDN-->
+
+		
+	</head>
+	<!-- body tag--> 
+	<body id="body_content">
+		<div class="navBar-primary">
+			<nav>
+				
+
+				<div>
+					<a href="Home.html"  >
+						<img  class="navBtn-logo" src="images/logo/sri-lanka-tourism-logo.png" >
+					</a>
+				</div>
+
+				<ul class="navUl">
+					<li class="navBtn"><a href="Home.html" class="active" >Home</a></li>
+					<li class="navBtn"><a href="Gallery.html">Gallery</a></li>
+					<li class="navBtn"><a href="BuyProducts.html">Buy Products</a></li>
+					<li class="navBtn"><a href="sriLankanInsider.html">Sri Lankan Insider</a></li>
+					<li class="navBtn"><a href="StudentDetails.html">Student Details</a></li>
+					<li class="navBtn"><a href="Queryform01.html">Query Form</a></li>
+				</ul>
+
+				<div class=" more-option" onClick="showMoreOptions()"><a ><i class="material-icons">more_vert</i></a>
+				</div>
+				<div class="more-option-container" id="more_option_container">
+					<div class="button " onclick="changeFont(this)" id="max">
+						<span class="content">  A+</span>
+					</div>
+					<div class="button" onclick="changeFont(this)" id="min">
+						<span class="content"> A-</span>
+					</div>
+
+					<div class="button" onclick="changeFont(this)" id="default">
+						<span class="content">A</span>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<section class="carousel card-style" id="carousel">
+			<img src="images/carousel/1.jpg" class="carousel-img fade" alt="lighthouse-at-coastal-area">
+			<img src="images/carousel/2.jpg" class="carousel-img fade" alt="trains-at-hill-country">
+			<img src="images/carousel/3.jpg" class="carousel-img fade" alt="elephants-in-wild-life">
+
+			<div class="carousel-heading" >
+				WELCOME TO SRI LANKA
+			</div>
+
+			<script>
+                // slide show refference https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto
+                var slideHome = 0;
+                showSlides();
+                function showSlides() {
+                    var i;
+                    var slidesArray = document.getElementsByClassName("carousel-img");
+                    for (i = 0; i < slidesArray.length; i++) {
+                        slidesArray[i].style.display = "none";
+                    }
+                    slideHome++;
+                    if (slideHome> slidesArray.length) {slideHome = 1}
+
+                    slidesArray[slideHome-1].style.display = "block";
+                    setTimeout(showSlides, 3000); // Change image every 3 seconds
+                }
+			</script>
+		</section>
+
+		<section class="container card-style" id="videos">
+
+			<div class="container-heading">
+				VIDEOS
+			</div>
+			<div class="video">
+				<iframe width="300px"  height="200px"
+						src="https://www.youtube.com/embed/YGKCiWot8Nk"
+						frameborder="0"  allowfullscreen>
+						
+				</iframe>
+			</div>
+			<div class="video">
+				<iframe width="300px"  height="200px"
+						src="https://www.youtube.com/embed/DIBUQL7ICuk"
+						frameborder="0" allowfullscreen>
+				</iframe>
+			</div>
+			<div class="video">
+				<iframe width="300px" height="200px"
+						src="https://www.youtube.com/embed/sYjIE0sbuzY"
+						frameborder="0" allowfullscreen>
+				</iframe>
+			</div>
+		</section>
+
+		<section class="container card-style"  id="maps">
+			<div class="container-heading">
+				MAP
+			</div>
+
+			<div class="mapContainer">
+				<div class="form-input">
+					<input id="searchTextField"
+						   type="text" name="name"
+						   placeholder="Find your location......"
+						   onkeydown="autoComplete()"
+						   autocomplete="off"
+					>
+				</div>
+
+				<div id="map">
+				</div>
+			</div>
+
+			<script>
+                var cities =[
+                    {title:'kandy',lat: 7.290571500000001, lng: 80.63372619999996},
+                    {title:'Jaffna',lat: 9.6614981, lng: 80.02554650000002},
+                    {title:'Nilaveli',lat: 8.692733100000002, lng: 81.18852930000003},
+                    {title:'Sigiriya',lat: 7.954108499999998, lng: 80.75469799999996},
+                    {title:'"Ella"',lat: 7.7362385, lng: 80.2439809}
+                ];
+
+                var marker ;
+                var map;
+
+                function initMap() {
+                     map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 7,
+                        center: {
+                            lat:cities[3].lat,
+							lng: cities[3].lng
+                        }
+                    });
+                    for (var i in cities){
+                         marker = new google.maps.Marker({
+                            position: {
+							    lat: cities[i].lat,
+								lng: cities[i].lng
+							},
+                            map: map,
+                            title: cities[i].title
+                        });
+					}
+                }
+
+                function autoComplete() {
+                    var input = document.getElementById('searchTextField');
+                    var options = {
+                        types: ['geocode'],
+                        componentRestrictions: {country: 'lk'}
+                    };
+                    var autocomplete = new google.maps.places.Autocomplete(input, options);
+                    autocomplete.addListener('place_changed', function() {
+                        var place = autocomplete.getPlace();
+//                        alert(place.name +' '+ place.geometry.location.lat() +' '+ place.geometry.location.lng() );
+                         marker = new google.maps.Marker({
+                            position: {
+                                lat: place.geometry.location.lat(),
+                                lng: place.geometry.location.lng()
+                            } ,
+                            map: map,
+                            title: place.name
+                        });
+                    })
+                }
+//                reference - https://developers.google.com/maps/documentation/javascript
+			</script>
+
+			<script async
+					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjuInFiMgQNWDm2lJUr_z5JrZchRHjt5c&libraries=places&callback=initMap">
+			</script>
+		</section>
+
+
+
+		<div class="popup" id="popupWindow">
+			<div class="popup-content">
+				<div id="popupContent">
+
+				</div>
+				<div class="popup-actions">
+					<button class="btn-primary" onclick="closePopup()">
+						Ok
+					</button>
+				</div>
+
+			</div>
+			<div class="popup-window ">
+
+			</div>
+
+		</div>
+
+
+
+		<section class="container card-style">
+			<div class="container-heading">
+				DEVELOPERS
+			</div>
+			<table align="center">
+				<tr>
+					<th class="a ">
+						<img id="image" src="Images/developers/Lakshmitha.jpeg" alt="Lakshmita" >
+						<div class="flapOver ">
+							<div class="details">
+								<h4>Lakshmitha Vaithanalingam</h4>
+								<h3>Student 1</h3>
+								<p>Presentation Page <br> Buy products<br>Font Size Change</p>
+							</div>
+						</div>
+					</th>
+
+					<th class="a">
+						<img id="image" src="Images/developers/Seniya.jpeg" alt="Seniya">
+						<div class="flapOver">
+							<div class="details">
+								<h4>Seniya Lenora</h4>
+								<h3>Student 2</h3>
+								<p>Main Page <br> Comments Form</p>
+							</div>
+						</div>
+					</th>
+
+					<th class="a">
+						<img id="image" src="Images/developers/Malmitha.jpeg" alt="Malmitha">
+						<div class="flapOver">
+							<div class="details">
+								<h4>Malmitha Baranasooriya</h4>
+								<h3>Student 3</h3>
+								<p>Quiz <br>Student Details</p>
+							</div>
+						</div>
+					</th>
+
+					<th class="a">
+						<img id="image" src="Images/developers/Kanishka.jpeg" alt="Kanishka">
+						<div class="flapOver">
+							<div class="details">
+								<h4>Kanishka Jayashanka</h4>
+								<h3>Student 4</h3>
+								<p>Diagrams <br>View Images</p>
+							</div>
+						</div>
+					</th>
+				</tr>
+			</table>
+		</section>
+
+
+		<div class="secondary-bar">
+
+			<div class="tooltip">
+				<span class="tooltiptext"> --videos--</span>
+				<a class="secondary-bar-btn " href="#videos">
+					<i class="material-icons "  >video_library</i>
+				</a>
+			</div>
+
+			<div class="tooltip">
+				<span class="tooltiptext">--Map--</span>
+				<a class="secondary-bar-btn " href="#maps">
+					<i class="material-icons">pin_drop</i>
+				</a>
+			</div>
+
+			
+
+			<div>
+				<a class="up-arrow-btn " href="#">
+					<i class="material-icons">arrow_upward</i>
+				</a>
+			</div>
+
+		</div>
+
+
+
+		<div class="footer">
+
+			<a class="footer-container" href="sitemap.html">
+				Site Map
+			</a>
+
+			<div class="footer-container">
+				 &copy; 2022 All Rights Reserved
+			</div>
+
+			<a class="footer-container" href="student_2.html">
+				Editor - Seniya Lenora
+			</a>
+
+
+		</div>
+
+		<script type="text/javascript" src="JS/main.js"></script>
+		<script type="text/javascript" src="JS/FontChange.js"></script>
+
+
+	</body>
+</html>
+

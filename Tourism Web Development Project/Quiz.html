@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Tourism | Quiz</title>
+	<link href="CSS\Quiz.CSS" rel="stylesheet">
+</head>
+	
+<body>
+	<script>
+			// check for answers
+		function OnSubmit(){
+			document.getElementById('spentTime').style.visibility = 'visible'; //dispay spent time tag
+			document.getElementById('submit').style.visibility = 'hidden';     // hide submit button
+			
+			let marks = 0; //give marks
+			let qTot = 10; // total questions
+			
+			// store correct answers in a array
+			let answersC = ['a','b','c','d','c','d','b','b','a','d']; 
+			
+		// Get selected answers from quize form	
+		let q1 = document.forms['quiz']['q1'].value;
+		let q2 = document.forms['quiz']['q2'].value;
+		let q3 = document.forms['quiz']['q3'].value;
+		let q4 = document.forms['quiz']['q4'].value;
+		let q5 = document.forms['quiz']['q5'].value;
+		let q6 = document.forms['quiz']['q6'].value;
+		let q7 = document.forms['quiz']['q7'].value;
+		let q8 = document.forms['quiz']['q8'].value;
+		let q9 = document.forms['quiz']['q9'].value;
+		let q10 = document.forms['quiz']['q10'].value;
+
+			// check selected answers with correct answers
+
+			for(let i = 1; i <= qTot; i++ ){
+				if(eval('q'+i)== answersC[i-1]){
+					marks=marks+2;	// give marks 
+					document.getElementById('right'+i).style.visibility='visible'; // display correct image
+					}
+				else{
+					document.getElementById("correctAnswer"+i).style.visibility = 'visible'; // display correct answer div
+					document.getElementById("correctAnswer"+i).innerHTML = "Correct Answer is : "+answersC[i-1]; // display correct answer
+					marks--; // -1 for the wrong answer
+					document.getElementById('wrong'+i).style.visibility = 'visible'; // display wrong image
+				}
+			}
+			
+			// change backlayer color according to marks 
+			
+			if(marks <= 0){
+			document.getElementById("backLayer").style.backgroundColor = "RGB(255, 102, 102)";
+			}
+			else if(marks<=10){
+			document.getElementById("backLayer").style.backgroundColor = "rgb(255, 173, 51)";
+			}
+			else if(marks<=15){
+			document.getElementById("backLayer").style.backgroundColor = "rgb(255, 219, 77)";
+			}
+			else {
+			document.getElementById("backLayer").style.backgroundColor = "rgb(0, 204, 68)";
+			}
+			 
+			
+			// display results
+			
+			results.innerHTML="<h2>You Scored "+ marks + " points out of "+20+"</h2>"
+			alert(" You Scored "+marks+" out of "+20+". Click ok to check the paper");
+			return false;
+				}
+			
+		// display time
+				let timeInSecs;
+				let seconds;
+
+				function startTimer(secs){
+					timeInSecs = secs;
+					seconds = setInterval("tikTok()",1000); 
+					
+					}
+
+					function tikTok() {
+					let secs = timeInSecs;
+						if (secs>0) {
+							--timeInSecs;
+						}
+						else {
+						clearInterval(seconds);//stop the time
+						alert(" Sorry Your Time is Up !! click ok for get results "); 
+						topFunction();
+						OnSubmit(); //check answers if time out
+						}
+					
+					document.getElementById("timerDetails").innerHTML = secs; //display time
+					document.getElementById("spentTime").innerHTML = "Spent time for the quize: "+(60-secs) // display spent time
+					
+					}
+
+				startTimer(60); //start timer
+				
+				
+
+				
+		// got to top of the page to show results		
+		function topFunction() {
+			document.body.scrollTop = 0;
+			
+		}
+
+		// stop time
+		function stopTimer(){
+		clearInterval(seconds);
+		}
+	</script>
+	<div id="backLayer">      <!-- back white layer of the web page -->
+
+	<div id="qTagPositions">  <!-- question anchor tags-->
+
+		<ul type="none">
+			<li><b><a id="q" href="#q1">Question 01</a></b></li>
+			<li><b><a id="q" href="#q2">Question 02</a></b></li>
+			<li><b><a id="q" href="#q3">Question 03</a></b></li>
+			<li><b><a id="q" href="#q4">Question 04</a></b></li>
+			<li><b><a id="q" href="#q5">Question 05</a></b></li>
+			<li><b><a id="q" href="#q6">Question 06</a></b></li>
+			<li><b><a id="q" href="#q7">Question 07</a></b></li>
+			<li><b><a id="q" href="#q8">Question 08</a></b></li>
+			<li><b><a id="q" href="#q9">Question 09</a></b></li>
+			<li><b><a id="q" href="#q10">Question 10</a></b></li>
+			<li><button  id="submit" onclick="stopTimer();OnSubmit();topFunction();">Submit</button></li>	<!-- submit button -->
+			<li><a id="q" href="quizeStart.html"> Try Again</a></li>
+		</ul>
+	</div>
+
+	<p align="left" id="timerDetails"></p> <!-- Display time-->
+
+	<div id="pic" style="background-image: url(r1.jpg)>
+
+	</div>
+
+	<div id="quiz"> <!-- -->
+
+		<form name="quiz" onsubmit="return false;">
+		<div id="results">
+				<h2></h2><!--Display results -->
+		</div>
+
+		<div id="spentTime" style="visibility:hidden">
+				<p2></p2><!--Display spent time -->
+		</div><br>
+            <!-- question 1-->
+			<p id="q1"><b>Question 01</b><br>
+			<div id="questions">
+
+				01.When did Sri Lanka gain Independence?<br>
+				<ol type="a">
+					<li><input type="radio"  name="q1" value="a"/>4<sup>th</sup> February 1948<br></li>
+					<li><input type="radio"  name="q1" value="b"/>30<sup>th</sup> June 1942 <br></li>
+					<li><input type="radio"  name="q1" value="c"/>4<sup>th</sup> July 1956 <br></li>
+					<li><input type="radio"  name="q1" value="d"/>2<sup>nd</sup> December 1971<br></li>
+				</ol>
+				<p class="correctAnswer" id="correctAnswer1" style="visibility:hidden"></p> <!-- display correct answer -->
+			</div>
+			</p>
+
+			<!--Display right and wrong answers -->
+			<img class="wrong"id="wrong1" >
+			<img class="right"id="right1" >
+			<hr>
+				
+					<!-- question 2-->
+			<p id="q2"><b>Question 02</b><br>
+			<div id="questions">
+
+				02.In which continent is Sri Lanka located?<br>
+
+				<ol type="a">
+					<li><input type="radio" name="q2" value="a"/>Africa<br>
+					<li><input type="radio" name="q2" value="b"/>Asia <br></li>
+					<li><input type="radio" name="q2" value="c"/>Australia<br></li>
+					<li><input type="radio" name="q2" value="d"/>America<br></li>
+				</ol>
+				<p class="correctAnswer" id="correctAnswer2" style="visibility:hidden"></p>
+			</div>
+			</p>
+			<!--Display right and wrong answers -->
+			<img class="wrong" id="wrong2" >
+			<img class="right" id="right2" >
+			<hr>
+					<!-- question 3-->
+			<p id="q3"><b>Question 03</b><br>
+			<div id="questions">
+
+				03.What is the commercial capital of Sri Lanka?<br>
+
+				<ol type="a">
+					 <li><input type="radio" name="q3" value="a"/>Kuala Lumpur<br></li>
+					 <li><input type="radio" name="q3" value="b"/>Yakarta <br></li>
+					 <li><input type="radio" name="q3" value="c"/>Colombo<br></li>
+					 <li><input type="radio" name="q3" value="d"/>Kandy<br></li>
+				 </ol>
+				<p class="correctAnswer" id="correctAnswer3" style="visibility:hidden"></p>
+			</div>
+			</p>
+			<!--Display right and wrong answers -->
+			<img class="wrong" id="wrong3" >
+			<img class="right" id="right3" >
+			<hr>
+			
+					<!-- question 4-->
+			<p id="q4"><b>Question 04</b><br>
+			<div id="questions">
+
+				04.What is the native product of Sri Lanka from the following?<br>
+
+				<ol type="a">
+					<li><input type="radio" name="q4" value="a"/>Tea<br></li>
+					<li><input type="radio" name="q4" value="b"/>Rubber<br></li>
+					<li><input type="radio" name="q4" value="c"/>Coffee <br></li>
+					<li><input type="radio" name="q4" value="d"/>Cinnamon<br></li>
+				</ol>
+				<p class="correctAnswer" id="correctAnswer4" style="visibility:hidden"></p>
+			</div>
+			</p>
+			<!--Display right and wrong answers -->
+			<img  class="wrong" id="wrong4" >
+			<img  class="right" id="right4">
+			<hr>
+			
+					<!-- question 5-->
+			<p id="q5"><b>Question 05</b><br>
+			<div id="questions">
+
+				05.What is the currency used in Sri Lanka?<br>
+
+				<ol type="a">
+					<li><input type="radio" name="q5" value="a"/>Taka<br></li>
+					<li><input type="radio" name="q5" value="b"/>Baht <br></li>
+					<li><input type="radio" name="q5" value="c"/>Rupee<br></li>
+					<li><input type="radio" name="q5" value="d"/>Yen <br></li>
+				</ol>
+				<p class="correctAnswer" id="correctAnswer5" style="visibility:hidden"></p>
+			</div>
+			</p>
+			<!--Display right and wrong answers  -->
+			<img class="wrong" id="wrong5" >
+			<img class="right" id="right5" >
+			<hr>
+			
+						<!-- question 6-->
+			<p id="q6"><b>Question 06</b><br>
+			<div id="questions">
+
+				06.Which is the longest river in Sri Lanka?<br>
+
+				<ol type="a">
+					<li><input type="radio" name="q6" value="a"/>Kalu River<br></li>
+					<li><input type="radio" name="q6" value="b"/>Kelani River <br></li>
+					<li><input type="radio" name="q6" value="c"/>Padma <br></li>
+					<li><input type="radio" name="q6" value="d"/>Mahaweli River <br></li>
+				</ol>
+				<p class="correctAnswer" id="correctAnswer6" style="visibility:hidden"></p>
+			</div>
+			</p>
+			<!--Display right and wrong answers  -->
+			<img class="wrong" id="wrong6" >
+			<img class="right" id="right6" >
+			<hr>
+			
+						<!-- question 7-->
+			<p id="q7"><b>Question 07</b><br>
+			<div id="questions">
+
+				07.Which is the highest mountain in Sri Lanka?<br>
+
+				<ol type="a">
+					<li><input type="radio" name="q7" value="a"/>Kirigalpotta<br></li>
+					<li><input type="radio" name="q7" value="b"/>Piduruthalagala<br></li>
+					<li><input type="radio" name="q7" value="c"/>Godwin Austin <br></li>
+					<li><input type="radio" name="q7" value="d"/>Adam’s Peak<br></li>
+				</ol>
+				<p class="correctAnswer" id="correctAnswer7" style="visibility:hidden"></p>
+			</div>
+			</p>
+			<!--Display right and wrong answers  -->
+			<img class="wrong" id="wrong7">
+			<img class="right" id="right7">
+			<hr>
+			
+						<!-- question 8-->
+			<p id="q8"><b>Question 08</b><br>
+			<div id="questions">
+				08.Which animal appers on the Sri Lankan flag?<br>
+
+				<ol type="a">
+					<li><input type="radio" name="q8" value="a"/>Tiger<br></li>
+					<li><input type="radio" name="q8" value="b"/>Lion<br></li>
+					<li><input type="radio" name="q8" value="c"/>Elephant<br></li>
+					<li><input type="radio" name="q8" value="d"/>Panther<br></li>
+				</ol>
+				<p class="correctAnswer" id="correctAnswer8" style="visibility:hidden"></p>
+			</div>
+			</p>
+			<!--Display right and wrong answers  -->
+			<img class="wrong" id="wrong8">
+			<img class="right" id="right8">
+			<hr>
+			
+						<!-- question 9-->
+			<p id="q9"><b>Question 09</b><br>
+			<div id="questions">
+				09.What is the national language of Sri Lanka? <br>
+
+				<ol type="a">
+					 <li><input type="radio" name="q9" value="a"/>Sinhalese<br></li>
+					 <li><input type="radio" name="q9" value="b"/>Nepalese<br></li>
+					 <li><input type="radio" name="q9" value="c"/>Persian<br></li>
+					 <li><input type="radio" name="q9" value="d"/>Mandarin<br></li>
+				 </ol>
+				<p class="correctAnswer" id="correctAnswer9" style="visibility:hidden"></p>
+			</div>
+			</p>
+			<!--Display right and wrong answers -->
+			<img class="wrong" id="wrong9">
+			<img class="right" id="right9">
+			<hr>
+			
+						<!-- question 10-->
+			<p id="q10"><b>Question 10</b><br>
+			<div id="questions">
+				10.In which city is the Esala Perahera festival held? <br>
+
+				<ol type="a">
+					<li><input type="radio" name="q10" value="a"/>Colombo<br></li>
+					<li><input type="radio" name="q10" value="b"/>Negambo<br></li>
+					<li><input type="radio" name="q10" value="c"/>Katunayake<br></li>
+					<li><input type="radio" name="q10" value="d"/>Kandy<br></li>
+				</ol>
+				<p class="correctAnswer" id="correctAnswer10" style="visibility:hidden"></p>
+			</div>
+			</p>
+			<!--Display right and wrong answers -->
+			<img class="wrong" id="wrong10">
+			<img class="right" id="right10">
+			<hr>
+
+
+		<ul type="none">
+		</ul>
+
+
+	</form>
+
+	</div>
+	<div>
+	</div>
+	
+	<!--Footer-->
+	<div class="footer">
+
+            <a class="footer-container" href="sitemap.html">
+                Site Map
+            </a>
+
+            <div class="footer-container">
+                &copy; 2022 All Rights Reserved
+            </div>
+
+            <a class="footer-container" href="student_3.html">
+                Editor - Malmitha Baranasuriya
+            </a>
+
+    </div>
+</body>
+</html>

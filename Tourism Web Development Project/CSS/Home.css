@@ -1,0 +1,61 @@
+.form-input{
+    float: left;
+    width: 60%;
+    /*float: left;*/
+    /*width: 40%;*/
+    /*min-width: 200px;*/
+}
+
+input[type=text] {
+    border: none;
+    float: left;
+    width: 100%;
+    padding: 5px 20px 5px 20px;
+    border-bottom: 2px solid #ffd730;
+    background-color: inherit;
+    outline: none;
+
+    /*-webkit-transition: border-bottom 0.4s ease-in-out;*/
+    transition: border-bottom 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    border-bottom: 2px solid #3eb9a4;
+}
+
+.review-form{
+    float: left;
+    width: 98%;
+    margin: 1% 1% 1% 1%;
+    padding-top: 60px;
+}
+
+.mapContainer{
+    width: 90%;
+    padding: 0 10% 2% 10%;
+    float: left;
+}
+
+#searchTextField{
+    width: 25%;
+    min-width: 100px;
+    float: left;
+    margin-bottom: 2% ;
+}
+
+#map {
+    height: 70%;
+    width: 80%;
+    float: left;
+    min-width: 300px;
+}
+
+@media only screen and (max-width: 1000px) {
+    #map {
+        height: 50%;
+        float: left;
+        width: 250px;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+}

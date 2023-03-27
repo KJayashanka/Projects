@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<title>Tourism</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name ="author"  content ="XYZtravels" >
+
+		<link rel="shortcut icon" href="images/logo/SLmap.png" />
+
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/FontChangeButton.css">
+		<link href="css/Quiz.CSS" rel="stylesheet">
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- icon CDN-->
+		<style>
+			.article{
+				width:20%;
+				height: 500px;
+		</style>
+	</head>
+
+	<!-- body tag-->
+	<body>
+	<div class="navBar-primary">
+		<nav>
+			<div class="toggleBtn" onClick="showNavBar()" ><i class="material-icons">menu</i></div>
+			<div>
+				<a href="Home.html"  >
+					<img  class="navBtn-logo" src="images/logo/sri-lanka-tourism-logo.png" >
+				</a>
+			</div>
+
+			<ul class="navUl">
+
+				<!--<li ><a href="Home.html"> <img src="Images/logo/Delux-logo.png " class="logo"></a></li>-->
+				<li class="navBtn"><a href="Home.html">Home</a></li>
+				<li class="navBtn"><a href="Gallery.html">Gallery</a></li>
+				<li class="navBtn"><a href="BuyProducts.html" >Buy Products</a></li>
+				<li class="navBtn"><a href="sriLankanInsider.html" class="active" >Sri Lankan Insider</a></li>
+				<li class="navBtn"><a href="StudentDetails.html">Student Details</a></li>
+				<li class="navBtn"><a href="Queryform01.html">Comments Form</a></li>
+			</ul>
+
+			<div class=" more-option" onClick="showMoreOptions()"><a ><i class="material-icons">more_vert</i></a>
+			</div>
+			<div class="more-option-container" id="more_option_container">
+				<div class="button " onclick="changeFont(this)" id="max">
+					<span class="content">  A+</span>
+				</div>
+				<div class="button" onclick="changeFont(this)" id="min">
+					<span class="content"> A-</span>
+				</div>
+
+				<div class="button" onclick="changeFont(this)" id="default">
+					<span class="content">A</span>
+				</div>
+			</div>
+
+		</nav>
+	</div>
+	<section class="container card-style" id="videos">
+
+		<div class="container-heading">
+			Quiz
+		</div>
+
+	</section>
+	<div class="footer">
+
+	</div>
+	<script type="text/javascript" src="js/main.js"></script>
+
+	<div id="backLayer2">      <!-- back white layer of the web page -->
+		<p>
+			*    We welcome you to our beautiful island, Sri Lanka.
+			The island's proud history of over 2500 years and
+			the breathtaking diversity of scenery will capture
+			your heart and soul like no other destination.
+			May the time you spend in our island be filled with
+			exciting experiences-memories of which you will carry
+			long after you leave our shores.  And before you do
+			explore our island let us show you how much you know
+			about this pearl of Indian ocean for which you are
+			warmly welcome to play the Quiz we have arranged herewith. *
+		</p>
+
+		<li><b> <a  id="start" href="Quiz.html">Start Quiz</a></b></li>
+
+		<p></p>
+	</div>
+
+
+	<div class="footer">
+
+		<a class="footer-container" href="sitemap.html">
+			Site Map
+		</a>
+
+		<div class="footer-container">
+			&copy; 2022 All Rights Reserved
+		</div>
+
+		<a class="footer-container" href="cvs/thilini/thilini.html">
+			Editor -Malmitha Baranasuriya
+		</a>
+
+	</div>
+
+	<script type="text/javascript" src="js/FontChange.js"></script>
+	</body>
+</html>

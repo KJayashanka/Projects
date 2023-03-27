@@ -1,0 +1,538 @@
+
+body{
+	background-color: #f9f9f9;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0 ;
+	font-family: Verdana,sans-serif;
+	animation: fadein 1s;
+}
+
+
+@keyframes fadein {
+	from { opacity: 0.7; }
+	to   { opacity: 1; }
+}
+
+h1{
+	color: #060251;
+}
+
+div{
+	float : left
+}
+
+
+li ul{
+	text-decoration: none;
+}
+
+/*----------------------------------navBar Styles---------------------------------------------------------------------*/
+.navBar-primary{
+	width: 100%;
+	background-color: #006f73;
+	padding: 0 0 0 0 ;
+	box-shadow: 0 5px 3px #afafaf;
+	position: fixed;
+	float: left ;
+	height:54px;
+	z-index: 1;
+}
+
+.navUl{
+	width: 100%;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	background-color: #006f73;
+}
+
+.navBtn-logo{
+	margin-top: -10px ;
+}
+	
+.navBtn {
+	background-color: #006f73 ;
+	list-style-type: none;
+	/*text-decoration: none;*/
+	font-size: large ;
+	font-weight: 500;
+	float: left;
+	margin: 0 2% 0 2% ;
+}
+
+.navBtn :hover {
+	background-color: #008387;
+	color: #ffffff;
+	text-shadow: 0 3px 2px #3d3d45;
+}
+
+.more-option{
+	background-color: #006f73 ;
+	list-style-type: none;
+	font-size: large ;
+	font-weight: 500;
+	margin: 0 2% 0 2% ;
+	border-radius: 100%;
+	float: right;
+	padding: 0 0 1% 0;
+	cursor: pointer;
+}
+
+.more-option-container{
+	width: 10%;
+	background-color: #ffffff;
+	box-shadow: 0 0 12px #a8a8a8;
+	position: absolute;
+	top: 56px;
+	left: 80%;
+	display: none;
+	min-width: 150px;
+	padding: 1% 2% 1% 1%;
+}
+
+.more-option:hover {
+	background-color: #008387;
+	color: #ffffff;
+	text-shadow: 0px 3px 2px #3d3d45;
+}
+
+.more-option:active {
+	background-color: #006f73;
+	box-shadow: 0 0 3px #afafaf;
+}
+
+a{
+	text-decoration: none;
+	display: block;
+	color: #f1f1f1;
+	text-align: center;
+	padding: 14px 16px 14px 16px;
+}
+
+.active  {
+	/*background-color: #007478;*/
+	border-bottom: solid 4px #ffd54f;
+	/*border-bottom: solid #f3faff;*/
+	color: #ffffff;
+
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.card-style{
+	width: inherit;
+	margin: auto ;
+	background-color: #ffffff;
+	box-shadow: 0 2px 1.5px #adb4de;
+	float: left;
+}
+
+.content{
+	margin: 2% 2% 2% 2% ;
+}
+
+/*----------------------------------------------  secondary-bar ------------------------------------------------------*/
+
+.secondary-bar{
+	position: fixed;
+	top: 18%;
+	left: 93%;
+	/*width: 100%;*/
+	min-width: 400px;
+	/*background-color: #cdc9c3;*/
+}
+
+.secondary-bar-btn{
+	text-decoration: none;
+	margin: 1% 6% 1% 6% ;
+	background-color: #ffd54f;
+	/*width: 10% ;*/
+	font-weight: 900;
+	color: #006f73;
+	padding: 10px 16px;
+	text-shadow: 0 1px 1px #adb4de;
+	box-shadow: 0 2px 1px #afafaf;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: left;
+	/*min-width: 100px ;*/
+	text-align: center;
+	opacity: 0.9;
+}
+
+.secondary-bar-btn:active{
+	background-color: #c3a135;
+	color: #005155;
+}
+
+.secondary-bar-btn:hover{
+	background-color: #ffda62;
+	color: #006569;
+}
+
+.secondary-bar-btn:active{
+	background-color: #c3a135;
+	color: #005155;
+	box-shadow: 0 5px 4px #afafaf;
+}
+
+/*------------- up-arrow-btn ----------------*/
+.up-arrow-btn{
+	position: fixed;
+	top: 88%;
+	left: 93%;
+	text-decoration: none;
+	/*margin: 1% 3% 1% 6% ;*/
+	background-color: #ffd54f;
+	border-radius: 100%;
+	font-weight: 900;
+	color: #006f73;
+	text-shadow: 0 1px 1px #adb4de;
+	box-shadow: 0 1px 15px #696969;
+	cursor: pointer;
+	float: right;
+	text-align: center;
+	opacity: 0.9;
+}
+
+.up-arrow-btn:hover{
+	background-color: #ffda62;
+	color: #006569;
+}
+
+.up-arrow-btn:active{
+	background-color: #c3a135;
+	color: #005155;
+	box-shadow: 0 1px 20px #5f5f5f;
+}
+
+/*---------------------------------------------- container -----------------------------------------------------------*/
+.page-title{
+	width: 98%;
+	margin: 1% 1% 1% 1%;
+	padding-top: 60px;
+}
+
+.container{
+	width: 98%;
+	float: left;
+	margin: 2% 1% 1% 1%;
+	padding-top: 65px;
+	padding-bottom: 2%;
+}
+
+.container-heading{
+	width: 100%;
+	float: left;
+	text-align: center;
+	border-bottom: solid 2px #4b4b4b;
+	margin-bottom: 1%;
+	padding-bottom: 1%;
+	color: #060251;
+	font-size: 32px;
+}
+
+.form{
+	width: 98%;
+}
+
+/*---------------------------------------------- carousel ------------------------------------------------------------*/
+
+.carousel{
+	width: 96%;
+	margin: 6% 1% 1% 1%;
+	padding: 1% 1% 1% 1%;
+	/*margin: 1% 1% 1% 1% ;*/
+	/*padding: 0.5% 0.5% 0.5% 0.5% ;*/
+	background-color: #ffffff;
+	box-shadow: 0 2px 1.5px #adb4de;
+	float: left;
+}
+
+.carousel-heading{
+	display: block;
+	width: 96%;
+	text-shadow: 0 3px 2px #ffd446;
+	background-color: #0091ea;
+	text-align: center;
+	position: absolute;
+	font-size: 64px;
+	top: 25%;
+	color: #ffffff;
+	float: left;
+	box-shadow: 0 3px 1px #ffd446;
+
+}
+
+.carousel-img{
+	display: none;
+	float: left;
+	width: 100%;
+	z-index: -1 ;
+}
+
+/*------------------------------------------- video container --------------------------------------------------------*/
+
+.video{
+	width: 300px;
+	height: 200px;
+	margin: 1% 3% 1% 3%;
+	padding: 1% 1% 1% 1%;
+	border: solid 2px #ffd54f;
+	/*width: 50%;*/
+	float: left;
+	border-radius: 2%;
+}
+
+
+
+
+/*------------------------------------------- buttons ----------------------------------------------------------------*/
+
+/* btn primary */
+.btn-primary{
+	text-decoration: none;
+	margin-top: 3%;
+	background-color: #fcfaff;
+	width: 25%;
+	min-width: 80px;
+	font-weight: 900;
+	color: #006f73;
+	padding: 12px 18px;
+	box-shadow: 0 1px 4px #adb4de;
+	margin-right: 5%;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.btn-primary:active{
+	border-radius: 4px;
+}
+
+.btn-primary:hover{
+	background-color: #f0eef3;
+	box-shadow: 0 2px 5px #adb4de;
+	color: #006569;
+}
+
+/* btn secondary */
+
+.btn-secondary{
+	text-decoration: none;
+	margin-top: 4%;
+	background-color: #ffd54f;
+	width: 120px;
+	font-weight: 900;
+	color: #060251;
+	padding: 12px 18px;
+	box-shadow: 0 1px 4px #adb4de;
+	margin-right: 5%;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+
+}
+.btn-secondary:active{
+	border-radius: 4px;
+}
+.btn-secondary:hover{
+	box-shadow: 0 2px 5px #adb4de;
+	color: #06029b;
+}
+
+
+.incorrect{
+	color: #ff3f4f;
+}
+
+/*------------------------------- tooltip-------------------------------*/
+/*reference -  https://www.w3schools.com/css/css_tooltip.asp */
+.tooltip {
+	width: inherit;
+	position: relative;
+	display: inline-block;
+	margin-right: 100%;
+	margin-bottom: 2%;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: #5a5a5a;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	top: -3px;
+	right: 110%;
+}
+
+.tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	margin-top: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent transparent black;
+}
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+
+
+/*--------------------------------------------------  popup window --------------------------------------------------*/
+.popup{
+	width: 100%;
+	height: 100%;
+	/*margin-top: 70px;*/
+	z-index: 1;
+	position: fixed;
+	display: none;
+}
+
+.popup-window{
+	padding: 1% 1% 1% 1%;
+	width: 100%;
+	height: 100%;
+	/*margin-top: 70px;*/
+	background-color: #070707;
+	opacity: 0.6;
+	z-index: 0;
+	position: fixed;
+	top: 0;
+
+}
+
+.popup-content{
+	padding: 5% 5% 5% 5%;
+	width: 60%;
+	height: 50%;
+	/*margin-top: 70px;*/
+	border-radius: 2%;
+	background-color: #ffffff;
+	z-index: 1;
+	position: fixed;
+	top: 20%;
+	left: 15%;
+	font-size: 16px;
+}
+
+.popup-actions{
+	position: absolute;
+	left: 70%;
+	top: 80%;
+	width: inherit;
+}
+
+/*--------------------------------------------------  footer --------------------------------------------------------*/
+.footer{
+	width: 100%;
+	color: #ffffff;
+	background-color: #001f23;
+	padding: 1% 1% 1% 1%;
+}
+
+.footer-container {
+	padding: 0% 1% 1% 1%;
+	float: left;
+	color: white;
+	width: 28%;
+	min-width: 300px;
+	text-align: center;
+
+}
+
+.material-icons{
+	float: left;
+}
+
+
+/* --------------------------------styles for make the site responsive -------------------------------------------------*/
+@media only screen and (max-width: 1000px) {
+	.navBtn{
+		width: 100%;
+		margin: 0 0 0 0 ;
+	}
+	
+	.navUl{
+		display: none ;
+	}
+	.toggleBtn{
+		text-decoration: none;
+		display: inherit;
+		float:  left ;
+		cursor: pointer;
+		color: #f1f1f1;
+		text-align: center;
+		padding: 14px 16px 14px 16px;
+	}
+
+	.more-option{
+		position: absolute;
+		top: -1%;
+		left: 80%;
+	}
+
+	.more-option-container{
+		top: 56px;
+		left: 50%;
+	}
+	.more-option:hover {
+		padding-bottom: 4%;
+
+	}
+
+	.carousel-heading{
+		font-size: 24px;
+		top: 70px;
+	}
+
+	.carousel{
+		margin-top: 110px;
+	}
+
+	.container-heading{
+		font-size: 24px;
+		margin-bottom: 2%;
+
+	}
+
+	.secondary-bar{
+		position: fixed;
+		top: 20%;
+		left: 78%;
+		width: 30%;
+		min-width: 400px;
+	}
+
+	.secondary-bar-btn{
+		width: 15px;
+		height: 15px;
+	}
+	.up-arrow-btn{
+		top: 70%;
+		left: 80%;
+	}
+}
+
+
+@media only screen and (min-width: 900px) {
+	.toggleBtn{
+		display: none ;
+	}
+
+	.navUl{
+		display: block ;
+	}
+}
+
+
+
+

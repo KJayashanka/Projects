@@ -1,0 +1,410 @@
+<html>
+	<head>
+		<title>Tourism | Gallery</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name ="author"  content ="XYZtravels" >
+
+		<link rel="shortcut icon" href="images/logo/SLmap.png" />
+
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/FontChangeButton.css">
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- icon CDN-->
+		<style>
+		     
+			.placeholder {
+				width: 300px;
+				text-align: center;
+				margin-left: 1.8%;
+				/*margin-right: 5%;*/
+				margin-top: 1%;
+				padding-left: 6%;
+			}
+			.placeholder2 {
+				width: 300px;
+				text-align: center;
+				margin-left: 1.8%;
+				/*margin-right: 5%;*/
+				margin-top: 1%;
+				padding-left: 16%;
+			}
+
+			.thumbnail-group{
+				width: 100%;
+				margin: 0px;
+				float: left	;
+			}
+			.description {
+				width: 94%;
+				margin-left: 1%;
+				margin-top: 1%;
+				padding-top: 1%;
+				padding-bottom: 1%;
+				display: none;
+				box-shadow: 1.5px 1.5px 2px 1.5px #adb4de;
+				background-color: gainsboro;
+			}
+			h2{
+				font-size: 35px;
+				color: #060251;
+				background-color: #3eb9a4;
+				width: auto;
+				text-align: center;
+				padding: 2%;
+				margin: 45px 0 0 0;
+			}
+			h3 {
+				font-size: 25px;
+			}
+			.img-size {
+				width: 300px;
+				height: 250px;
+				float: left;
+			}
+			.cardImg1 {
+				width: 275px;
+				height: 180px;
+			}
+			.img-container {
+				width: 300px;
+			}
+			.detail-container {
+				padding: 1%;
+				width:40%;
+				height: 50%;
+				margin-left:10px;
+				/*background-image: url("images/placesToGo/Ella/sri-lanka-views-from-ella-rock-photo-01.jpg");*/
+				/*opacity: 0.6;*/
+				float: right;
+			}
+			.aHref {
+				color:blue;
+				font-weight:bold;
+				font-size:12px;
+				text-align:right;
+			}
+			.thumbnail-info {
+				padding:1%;
+				text-align:justify;
+			}
+			.thumbnail-info-points {
+				margin-top:2%;
+				margin-bottom:3%;
+			}
+
+		</style>
+	</head>
+
+	<!-- body tag-->
+	<body>
+	<div class="navBar-primary">
+		<nav>
+			<div class="toggleBtn" onClick="showNavBar()" ><i class="material-icons">menu</i></div>
+			<div>
+				<a href="Home.html"  >
+					<img  class="navBtn-logo" src="images/logo/sri-lanka-tourism-logo.png" >
+				</a>
+			</div>
+
+			<ul class="navUl">
+				<!--<li ><a href="Home.html"> <img src="Images/logo/Delux-logo.png " class="logo"></a></li>-->
+				<li class="navBtn"><a href="Home.html">Home</a></li>
+				<li class="navBtn"><a href="Gallery.html" class="active" >Gallery</a></li>
+				<li class="navBtn"><a href="buyProducts.html">Buy Products</a></li>
+				<li class="navBtn"><a href="sriLankanInsider.html">Sri Lankan Insider</a></li>
+				<li class="navBtn"><a href="StudentDetails.html">Student Details</a></li>
+				<li class="navBtn"><a href="Queryform01.html">Query Form</a></li>
+			</ul>
+
+			<div class=" more-option" onClick="showMoreOptions()"><a ><i class="material-icons">more_vert</i></a>
+			</div>
+
+			<div class="more-option-container" id="more_option_container">
+				<div class="button " onclick="changeFont(this)" id="max">
+					<span class="content">  A+</span>
+				</div>
+				<div class="button" onclick="changeFont(this)" id="min">
+					<span class="content"> A-</span>
+				</div>
+
+				<div class="button" onclick="changeFont(this)" id="default">
+					<span class="content">A</span>
+				</div>
+			</div>
+
+		</nav>
+	</div>
+	<div class= "bodyContent">
+
+		<script>
+			//reference to onmouseover & onmouseout : https://www.w3schools.com/jsref/event_onmouseover.asp
+			function onMouseImg(para) {
+				var placeholder = document.getElementsByClassName('placeholder');
+				var placeholder2 = document.getElementsByClassName('placeholder2');
+				var imgStyles = document.getElementsByClassName('img-size');
+	//                    var thumbnails = document.getElementsByClassName('description');
+
+				switch (para.id){
+					case 'kandy':
+						document.getElementById('card-kandy').style.display = "block";
+						document.getElementById('card-ella').style.display = "none";
+						document.getElementById('card-jaffna').style.display = "none";
+						document.getElementById('card-sigiriya').style.display = "none";
+						document.getElementById('card-nilaveli').style.display = "none";
+						break;
+
+					case 'sigiriya':
+						document.getElementById('card-kandy').style.display = "none";
+						document.getElementById('card-ella').style.display = "none";
+						document.getElementById('card-jaffna').style.display = "none";
+						document.getElementById('card-sigiriya').style.display = "block";
+						document.getElementById('card-nilaveli').style.display = "none";
+						break;
+
+					case 'nilaveli':
+						document.getElementById('card-kandy').style.display = "none";
+						document.getElementById('card-ella').style.display = "none";
+						document.getElementById('card-jaffna').style.display = "none";
+						document.getElementById('card-sigiriya').style.display = "none";
+						document.getElementById('card-nilaveli').style.display = "block";
+						break;
+
+					case 'jaffna':
+						document.getElementById('card-kandy').style.display = "none";
+						document.getElementById('card-ella').style.display = "none";
+						document.getElementById('card-jaffna').style.display = "block";
+						document.getElementById('card-sigiriya').style.display = "none";
+						document.getElementById('card-nilaveli').style.display = "none";
+						break;
+
+					case 'ella':
+						document.getElementById('card-kandy').style.display = "none";
+						document.getElementById('card-ella').style.display = "block";
+						document.getElementById('card-jaffna').style.display = "none";
+						document.getElementById('card-sigiriya').style.display = "none";
+						document.getElementById('card-nilaveli').style.display = "none";
+						break;
+
+				}
+
+				for (var i=0; i<imgStyles.length;i++){
+					imgStyles[i].style.height = "180px";
+					imgStyles[i].style.width = "230px";
+
+					if (i<3) {
+						placeholder[i].style.width = "230px";
+						placeholder[i].style.paddingLeft = "0%";
+					}if (i<2) {
+						placeholder2[i].style.width = "230px";
+						placeholder2[i].style.paddingLeft = "0%";
+					}
+				}
+			}
+
+			/*    function defaultImg() {
+			 var placeholder = document.getElementsByClassName('placeholder');
+			 var placeholder2 = document.getElementsByClassName('placeholder2');
+			 var imgStyles = document.getElementsByClassName('img-size');
+
+			 for (var  i=0; i<imgStyles.length;i++){
+			 if (i<3){
+			 placeholder[i].style.width = "300px";
+			 placeholder[i].style.paddingLeft = "6%";
+			 }if (i<2) {
+			 placeholder2[i].style.width = "300px";
+			 placeholder2[i].style.paddingLeft = "16%";
+			 }
+			 imgStyles[i].style.height = "250px";
+			 imgStyles[i].style.width = "300px";
+			 }
+			 }*/
+		</script>
+
+		<div class="thumbnail-group">
+			<div class="placeholder" id="kandy" onmouseover="onMouseImg(this)">
+				<h2>Kandy</h2>
+				<img src="images/places/Kandy.jpeg" class="img-size">
+			</div>
+			<div class="placeholder" id="jaffna" onmouseover="onMouseImg(this)" >
+				<h2>Jaffna</h2>
+				<img src="images/places/Jaffna.jpg" class="img-size">
+			</div>
+			<div class="placeholder" id="sigiriya" onmouseover="onMouseImg(this)" >
+				<h2>Sigiriya</h2>
+				<img src="images/places/Sigiriya.jpg" class="img-size">
+			</div>
+			<div class="placeholder2" id="nilaveli" onmouseover="onMouseImg(this)" >
+				<h2>Nilaveli</h2>
+				<img src="images/places/Nilaveli.jpg" class="img-size">
+			</div>
+			<div class="placeholder2" id="ella" onmouseover="onMouseImg(this)">
+				<h2>Ella</h2>
+				<img src="images/places/Ella.jpg" class="img-size">
+			</div>
+		</div>
+		<! Refference for information: www.wikipedia.org>
+		<div class="card-style description" id="card-ella">
+			<div class="img-container">
+				<img src="images/placesToGo/Ella/img_dsfds.jpg" class="cardImg1">
+				<img src="images/placesToGo/Ella/littleadamspeak_ella_srilanka_4 (copy).jpg" class="cardImg1">
+			</div>
+			<div class="img-container">
+				<img src="images/placesToGo/Ella/98-acres-resort.jpg" class="cardImg1">
+				<img src="images/placesToGo/Ella/ella2.jpg" class="cardImg1">
+			</div>
+			<div class="detail-container">
+				<div class="card-style"
+					 style="height: 100%;
+							 float: left;
+							 background-color: transparent;
+							 padding-left: 0%">
+					<h3>Ella</h3>
+					<div class="thumbnail-info">
+						Ella is a small town in the Badulla District of Uva Province, Sri Lanka governed by an Urban Council. It is approximately 200 kilometres east of Colombo and is situated at an elevation of 1,041 metres above sea level.
+					</div>
+					<div class="thumbnail-info-points">
+						<b>Weather :</b> 28°C, Wind S at 6 km/h, 61% Humidity
+						<b>Population :</b> 44,763 (2012) <br/>
+						<b>Province :</b> Uva Province <br/>
+					</div>
+					<a href="https://en.wikipedia.org/wiki/Ella,_Sri_Lanka" target="_blank" class="aHref">See more..</a>
+				</div>
+			</div>
+		</div>
+		<div class="card-style description" id="card-kandy">
+			<div class="img-container">
+				<img src="images/placesToGo/Kandy/1356174142_0!!-!!Kandy.jpg" class="cardImg1">
+				<img src="images/placesToGo/Kandy/6800241852_d673d49d25.jpg" class="cardImg1">
+			</div>
+			<div class="img-container">
+				<img src="images/placesToGo/Kandy/z_p01-final-randoli-perehera.jpg" class="cardImg1">
+				<img src="images/placesToGo/Kandy/lesterlost-travel-kandy-temple-tooth-relic-drummers-1.jpg" class="cardImg1">
+			</div>
+			<div class="detail-container">
+				<div class="card-style"
+					 style="height: 100%;
+							 float: left;
+							 background-color: transparent;
+							 padding-left: 0%">
+					<h3>Kandy</h3>
+					<div class="thumbnail-info">
+						Kandy is a large city in central Sri Lanka. It's set on a plateau surrounded by mountains, which are home to tea plantations and biodiverse rainforest. The city's heart is scenic Kandy Lake (Bogambara Lake), which is popular for strolling. Kandy is famed for sacred Buddhist sites, including the Temple of the Tooth (Sri Dalada Maligawa) shrine, celebrated with the grand Esala Perahera annual procession.
+					</div>
+					<div class="thumbnail-info-points">
+						<b>Weather :</b> 25°C, Wind SW at 11 km/h, 85% Humidity
+						<b>Population :</b> 125,400 (2011) <br/>
+						<b>Province :</b> Central Province <br/>
+					</div>
+					<a href="https://en.wikipedia.org/wiki/Kandy" target="_blank" class="aHref">See more..</a>
+				</div>
+			</div>
+		</div>
+		<div class="card-style description" id="card-sigiriya">
+			<div class="img-container">
+				<img src="images/placesToGo/Sigiriya/sigiriya-rock3-1.jpg" class="cardImg1">
+				<img src="images/placesToGo/Sigiriya/sigiriya6.jpg" class="cardImg1">
+			</div>
+			<div class="img-container">
+				<img src="images/placesToGo/Sigiriya/Lion_Feet.jpg" class="cardImg1">
+				<img src="images/placesToGo/Sigiriya/12226866074pq7bil.jpg" class="cardImg1">
+			</div>
+			<div class="detail-container">
+				<div class="card-style"
+					 style="height: 100%;
+							 float: left;
+							 background-color: transparent;
+							 padding-left: 0%">
+					<h3>Sigiriya</h3>
+					<div class="thumbnail-info">
+						<b>Historical place in Sri Lanka.</b>
+						Sigiriya or Sinhagiri is an ancient rock fortress located in the northern Matale District near the town of Dambulla in the Central Province, Sri Lanka.
+					</div>
+					<div class="thumbnail-info-points">
+						<b>Weather :</b> 30°C, Wind S at 26 km/h, 78% Humidity
+						<b>Population :</b> 1,100 (2010) <br/>
+						<b>Province :</b> Central Province <br/>
+					</div>
+					<a href="https://en.wikipedia.org/wiki/Sigiriya" target="_blank" class="aHref">See more..</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="card-style description" id="card-nilaveli">
+			<div class="img-container">
+				<img src="images/placesToGo/Nilaweli/5c70fa_aec3ec0bd1404e7d89b7789190b03130~mv2_d_2511_1670_s_2.jpg" class="cardImg1">
+				<img src="images/placesToGo/Nilaweli/64085492.jpg" class="cardImg1">
+			</div>
+			<div class="img-container">
+				<img src="images/placesToGo/Nilaweli/14148249-tropical-beach-in-sri-lanka.jpg" class="cardImg1">
+				<img src="images/placesToGo/Nilaweli/89959325.jpg" class="cardImg1">
+			</div>
+			<div class="detail-container">
+				<div class="card-style"
+					 style="height: 100%;
+							 float: left;
+							 background-color: transparent;
+							 padding-left: 0%">
+					<h3>Nilaveli</h3>
+					<div class="thumbnail-info">
+						Nilaveli, is a coastal resort town and suburb of the Trincomalee District, Sri Lanka located 16 km northwest of the city of Trincomalee.
+					</div>
+					<div class="thumbnail-info-points">
+						<b>Weather :</b> 28°C, Wind S at 16 km/h, 82% Humidity
+						<b>Population :</b>  334,363 (2010) <br/>
+						<b>Province :</b> Eastern Province <br/>
+					</div>
+					<a href="https://en.wikipedia.org/wiki/Nilaveli" target="_blank" class="aHref">See more..</a>
+				</div>
+			</div>
+		</div>
+		<div class="card-style description" id="card-jaffna">
+			<div class="img-container">
+				<img src="images/placesToGo/Jaffna/1234.jpg" class="cardImg1">
+				<img src="images/placesToGo/Jaffna/11062421_923295474407707_6322142567814660683_o.jpg" class="cardImg1">
+			</div>
+			<div class="img-container">
+				<img src="images/placesToGo/Jaffna/1-Jaffna library.jpg" class="cardImg1">
+				<img src="images/placesToGo/Jaffna/Jaffna-Light-House.jpg" class="cardImg1">
+			</div>
+			<div class="detail-container">
+				<div class="card-style"
+					 style="height: 100%;
+							 float: left;
+							 background-color: transparent;
+							 padding-left: 0%">
+					<h3>Jaffna</h3>
+					<div class="thumbnail-info">
+						Jaffna is the capital city of the Northern Province of Sri Lanka. It is the administrative headquarters of the Jaffna district located on a peninsula of the same name. With a population of 88,138, Jaffna is Sri Lanka's 12th largest city.
+					</div>
+					<div class="thumbnail-info-points">
+						<b>Weather :</b> 30°C, Wind S at 26 km/h, 78% Humidity
+						<b>Population :</b> 88,138 (2012) <br/>
+						<b>Province :</b> Northern Province <br/>
+					</div>
+					<a href="https://en.wikipedia.org/wiki/Jaffna" target="_blank" class="aHref">See more..</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="footer">
+
+		<a class="footer-container" href="sitemap.html">
+			Site Map
+		</a>
+
+		<div class="footer-container">
+			&copy; 2022 All Rights Reserved
+		</div>
+
+		<a class="footer-container" href="student_4.html">
+			Editor - Kanishka Jayashanka
+		</a>
+
+	</div>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/FontChange.js"></script>
+	</body>
+</html>
+

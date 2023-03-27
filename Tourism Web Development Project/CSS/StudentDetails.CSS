@@ -1,0 +1,105 @@
+html, body {
+	font-family: Verdana,sans-serif;
+	background-image: url("../images/buyProducts/products-bg.jpeg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.team-section {
+	overflow: hidden;
+	height: 500px;
+	text-align: center;
+	padding: 10px;
+}
+
+.team-section h1 {
+	text-transform: uppercase;
+	padding: 20px;
+	font-size: 60px;
+	color: white;
+	animation: glow .5s infinite alternate;
+}
+
+@keyframes glow {
+	to {
+		text-shadow: 0 0 15px #018EF5, 0 0 15px #00FFFF;
+	}
+}
+
+.border {
+	display: block;
+	margin: auto;
+	width: 160px;
+	height: 1px;
+	background: white;
+	margin-bottom: 20px;
+}
+
+.ps {
+	margin-bottom: 40px;
+}
+
+.imgs {
+	display: inline-block;
+	margin: 0 30px;
+	width: 260px;
+	height: 243px;
+	overflow: hidden;
+	border-radius: 50%;	
+}
+
+.ps img{
+	width: 100%;
+	transition: 0.4s all;
+	overflow: hidden;
+}
+
+.ps img:hover{
+	transform: scale(1.5);
+}
+
+#text{
+	color: black; 
+	font-weight: bold;
+	font-size: 20px;
+}
+#text2 {
+	color:blue;
+	font-weight:bold:
+}
+#backLayer{ /* back white layer */
+	text-align:center;
+	background-color: rgba(255,255,255,0.85);
+	margin-right:150px;
+	margin-left:150px;
+	padding:2px;
+	margin-top:110px;
+	border-radius:100px;
+}
+
+/* Footer */ 
+.footer { 
+	width:100%;
+	background-color:#001F23;
+	padding:1% 1% 1% 1%;
+	position:fixed;
+	padding:10px;
+	bottom:0;
+	text-align:center;
+	margin:0;
+}
+		
+.footer-container {
+	padding:0% 1% 0% 1%;
+	float:left;
+	color:white;
+	width:28%;
+	min-width:300px;
+	text-align:center;
+}
