@@ -1,0 +1,43 @@
+h1 {
+    color: #333; /* Text color */
+    font-size: 24px; /* Font size */
+    margin-bottom: 20px; /* Spacing at the bottom */
+}
+
+/* Style for the "Create Zone" button */
+.btn-primary {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+}
+
+/* Style for the table */
+.table {
+    border: 1px solid #ccc; /* Table border */
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Table width */
+}
+
+/* Style for table headers */
+.table th {
+    background-color: #f8f9fa; /* Header background color */
+    text-align: left; /* Header text alignment */
+    padding: 8px; /* Header cell padding */
+}
+
+/* Style for table data cells */
+.table td {
+    border: 1px solid #ccc; /* Cell border */
+    padding: 8px; /* Cell padding */
+}
+
+/* Style for the "Edit" button */
+.btn-primary {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 5px 10px; /* Button padding */
+}
+
+/* Hover effect on "Edit" button */
+.btn-primary:hover {
+    background-color: #0056b3; /* Button background color on hover */
+}

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+body {
+    font-family: Raleway, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+label {
+    display: inline-block;
+	width: 140px;
+	margin-right: auto;
+	margin-left: auto;
+    margin-bottom: 10px;
+}
+
+
+header {
+    padding: 20px 0;
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* nav a {
+    color: #1c2053;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+nav a:hover {
+    color: #131618;
+} */
+nav {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly horizontally */
+    align-items: center; /* Vertically center items */
+    padding: 0 20px;
+}
+
+nav a {
+    color: #1c2053;
+    text-decoration: none;
+    margin-right: 100px;
+    flex: 1; /* Distribute available space equally among items */
+}
+
+nav a:hover {
+    color: #131618;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+.btn {
+    background-color: #48494a;
+	color: #f2f2f2;
+	padding:8px 20px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+	font-size:12px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	cursor:pointer;
+	border: 2px solid #48494a;
+	border-radius:20px;
+}
+button:hover, #submitbtn:hover, .btn:hover{
+	background-color:white;
+	color:black;
+}
